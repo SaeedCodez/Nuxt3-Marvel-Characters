@@ -22,4 +22,15 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  components: [
+    {
+      path: '~/components/M-elements',
+      pathPrefix: true
+    },
+    {
+      path: '~/components/pages',
+      pathPrefix: true
+    },
+    '~/components'
+  ],
 })
