@@ -26,6 +26,9 @@
 
       <!-- content -->
       <div v-else class="uppercase relative">
+         <Head>
+            <Title>{{ character.name }} CHARACTER</Title>
+         </Head>
          <!-- texts -->
          <div class="w-full text-center">
             <h1 class="text-[50px] mb-1 font-[600]">{{ character.name }}</h1>
