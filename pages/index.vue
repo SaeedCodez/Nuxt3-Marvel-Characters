@@ -1,12 +1,16 @@
 <script setup>
    import VueTailwindPagination from "@ocrv/vue-tailwind-pagination";
    import "@ocrv/vue-tailwind-pagination/styles";
+   
+   useHead({
+      title: "MARVEL CHARACTERS 🔥"
+   })
 
    const route = useRoute();
    const router = useRouter();
 
    const searchValue = ref(route.query.search ? route.query.search : "");
-   const currentPage = ref(route.query.page ? route.query.page : 1);
+   const currentPage = ref(route.query.page ? Number(route.query.page) : 1);
    const totalCharacters = ref(0);
 
    const characters = ref(null);
@@ -19,6 +23,7 @@
 
       await getCharacters(searchValue.value, currentPage.value)
          .then((response) => {
+            console.log(response);
             totalCharacters.value = response.total;
             characters.value = response.results;
          })
@@ -82,7 +87,7 @@
       <div>
          <Transition name="fade" mode="out-in">
             <div v-if="pending" class="w-fit m-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-14 gap-[25px]">
-               <!-- loaing -->
+               <!-- loading -->
                <div
                   class="animate-pulse bg-[#ffffff2f] w-[152px] h-[201px] rounded-[5px] relative flex items-center justify-center"
                   v-for="i in 5">
@@ -109,7 +114,7 @@
                <!-- Characters -->
                <div
                   class="w-fit m-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-14 gap-[25px]">
-                  <loopsMarvelCharacter
+                  <charactersMarvelCharacter
                      v-for="character in characters"
                      :id="character.id"
                      :name="character.name"

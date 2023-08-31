@@ -39,7 +39,7 @@
    </nuxt-link>
 </template>
 
-<style>
+<style scope>
    .character-cover {
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
    }

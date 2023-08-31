@@ -1,2 +1,2 @@
 
-export { getCharacters } from './api/characters'
+export { getCharacters , getCharacter } from './api/characters'

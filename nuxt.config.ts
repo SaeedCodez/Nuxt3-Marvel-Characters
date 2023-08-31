@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  modules: ['@pinia/nuxt'],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
@@ -24,11 +25,15 @@ export default defineNuxtConfig({
   },
   components: [
     {
-      path: '~/components/M-elements',
+      path: '~/components/elements',
       pathPrefix: true
     },
     {
       path: '~/components/pages',
+      pathPrefix: true
+    },
+    {
+      path: '~/components/pages-components',
       pathPrefix: true
     },
     '~/components'
