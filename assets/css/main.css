@@ -9,7 +9,7 @@ body {
       font-family: 'saira', Arial, Helvetica, sans-serif;
       max-width: 860px;
       margin: auto !important;
-      background-image: url('~/public/assets/images/back-2.png');
+      background-image: url('~/public/assets/images/back-3.webp');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -31,5 +31,5 @@ body {
 .fade-enter-from,
 .fade-leave-to {
       opacity: 0;
-      filter: blur(7px);
+      filter: blur(1rem);
 }

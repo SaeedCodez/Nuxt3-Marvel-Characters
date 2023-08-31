@@ -98,14 +98,14 @@
 
             <div v-else-if="error">
                <!-- error -->
-               <M-alert class="mt-14" @tryAgain="refresh()">
+               <M-alert class="mt-14" @tryAgain="getCharactersHandler()">
                   An error occurred. Please try again :(
                </M-alert>
             </div>
 
             <div v-else-if="characters?.length == 0">
                <!-- without record -->
-               <M-alert class="mt-14" @tryAgain="refresh()">
+               <M-alert class="mt-14" @tryAgain="getCharactersHandler()">
                   Character not found :(
                </M-alert>
             </div>
