@@ -1,9 +1,19 @@
-<script setup></script>
+<script setup>
+   const setPageBackground = ref(false);
+
+   onMounted(() => {
+      setTimeout(() => {
+         setPageBackground.value = true;
+      }, 10);
+   });
+</script>
 
 <template>
-   <NuxtLayout>
-      <NuxtPage />
-   </NuxtLayout>
+   <main :class="[setPageBackground && 'have-background']">
+      <div class="content">
+         <NuxtPage />
+      </div>
+   </main>
 </template>
 
 <style>

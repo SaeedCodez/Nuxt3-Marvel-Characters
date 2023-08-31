@@ -42,4 +42,11 @@ export default defineNuxtConfig({
     },
     '~/components'
   ],
+  routeRules: {
+    '/assets/**': { swr: 3600 },
+    '/assets/css/**': { swr: 3600 },
+    '/public/**': { swr: 86400 },
+    '/public/assets/**': { swr: 86400 },
+    '/_nuxt/**': { swr: 86400 },
+  },
 })
