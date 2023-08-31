@@ -3,14 +3,14 @@
       series: Array,
    });
 
-   const showAll = ref(false);
+   const showAll = ref(props.series.length < 8);
 </script>
 
 <template>
    <div class="mt-10 p-[30px] bg-black rounded-2xl" v-if="series?.length">
       <h3 class="text-[28px] font-[700]">series ({{ series?.length }})</h3>
       <div
-         class="mt-5 grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3 overflow-hidden relative"
+         class="mt-5 grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3 overflow-hidden relative"
          :class="[showAll ? 'max-h-auto' : 'max-h-[330px]']">
          <SingleCharacterSerie v-for="serie in series" :name="serie.name" />
          <!-- cover -->

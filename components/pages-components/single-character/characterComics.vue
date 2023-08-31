@@ -3,14 +3,14 @@
       comics: Array,
    });
 
-   const showAll = ref(false);
+   const showAll = ref(props.comics.length < 8);
 </script>
 
 <template>
    <div class="mt-8 p-[30px] bg-black rounded-2xl" v-if="comics?.length">
       <h3 class="text-[28px] font-[700]">comics ({{ comics?.length }})</h3>
       <div
-         class="mt-5 grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3 overflow-hidden relative"
+         class="mt-5 grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3 overflow-hidden relative"
          :class="[showAll ? 'max-h-auto' : 'max-h-[330px]']">
          <SingleCharacterComic v-for="serie in comics" :name="serie.name" />
          <!-- cover -->

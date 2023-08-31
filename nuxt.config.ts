@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['@pinia/nuxt'],
   app: {
+    head: {
+      title: "MARVEL CHARACTERS",
+      link: [{ rel: 'icon', type: 'image/png', href: "/assets/images/favicon.png" }]
+    },
     pageTransition: { name: 'page', mode: 'out-in' },
   },
   runtimeConfig: {
